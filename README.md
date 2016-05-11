@@ -84,3 +84,16 @@ limit 10;
  1. Is Impala faster or slower?
  2. Do you see anything in the Job Browser when Impala runs? Why?
 
+### Command line tools
+Hue is a nice web interface, but anything you can do with it you can do in command line
+
+1. Open Hive shell by typing `hive` in the cloudera docker console
+2. Repeat step #4 from previous section in the hive console
+3. type `exit` and press `Enter` to exit Hive shell.
+4. To view jobs run in Hadoop, type:
+
+```
+mapred job -list all 
+yarn application -list
+```
+## Exercise 2: Write and run Java MapReduce job
