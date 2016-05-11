@@ -96,4 +96,35 @@ Hue is a nice web interface, but anything you can do with it you can do in comma
 mapred job -list all 
 yarn application -list
 ```
-## Exercise 2: Write and run Java MapReduce job
+## Exercise 2: Write and run Java MapReduce job in local mode
+**Goal**: In this exercise we will use code of Java MapReduce and run it in IDE and debug it in local mode.
+
+1. Clone or copy the source files from this guthub project: **pom.xml** and **WordCount.java**.
+2. Prepare some files in HDFS to work on:
+3. In the Cloudera docker console type:
+
+ ```
+ sudo su cloudera
+ cd
+ #here we create directories in HDFS:
+ hdfs dfs -mkdir /user/cloudera/wordcount /user/cloudera/wordcount/input
+ #here we create three files in local file system:
+ echo "Hadoop is an elephant" > file0
+ echo "Hadoop is as Yellow as can be" > file1
+ echo "Oh what a yellow fellow is Hadoop" > file2
+ #here we copy the local files to HDFS:
+ hdfs dfs -put file* /user/cloudera/wordcount/input
+ ```
+4. Run WordCount from your IDE on your PC that will access the docker container on which Hadoop is running. You need to pass two program arguments: input and output folders: `hdfs://<IPAddress>:8020/user/cloudera/wordcount/input hdfs://<IPAddress>:8020/user/cloudera/wordcount/output`
+5. Check that the new files were created using Hue:  [http://<IP_ADDRESS>:8888]() “Manage HDFS”. locate the file: __/user/cloudera/wordcount/output/part-00000__ and view its content
+6. Check the Job Browser in Hue. Was there a job running? why?
+7. Where did the program run? where is the data? how did the program read the data?
+
+### Modify WordCount program
+As you probably noticed, the program distinguishes between uppercase and lowercase letters.
+
+1. Change the program to be case insensitive.
+2. Did you make your change in the Mapper or Reducer code?
+3. Run the program with debugger and add some breakpoints to stop in the code.
+ 
+
