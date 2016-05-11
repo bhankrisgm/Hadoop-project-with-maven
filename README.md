@@ -127,4 +127,18 @@ As you probably noticed, the program distinguishes between uppercase and lowerca
 2. Did you make your change in the Mapper or Reducer code?
 3. Run the program with debugger and add some breakpoints to stop in the code.
  
+## Exercise 3: Deploy MapReduce program on a cluster
+**Goal:** Hadoop MapReduce programs do not run in local mode. In production they always run on a cluster. Now we will deploy our program on the cluster.
+**Note:** Although we did not install Hadoop cluster with several machines and we run one docker machine, it behaves like a real cluster of one node.
 
+1. The maven **pom.xml** in our project contains a shadow plugin that creates uber jar with all dependencies in it. it will be created in target directory with name “hadoop-tutorial-1.0-SNAPSHOT.jar” 
+2. Run `maven package` to create the jar file.
+3. Copy the jar file to `/tmp/` which is shared directory with the docker container. 
+4. On the docker container machine, run the job using “yarn jar” command:
+
+ ```
+ su cloudera
+ cd
+ yarn jar /tmp/hadoop-tutorial-1.0-SNAPSHOT.jar main.java.org.tikalk.WordCount hdfs://<IPAddress>:8020/user/cloudera/wordcount/input hdfs://<IPAddress>:8020/user/cloudera/wordcount/output
+ ```
+5. Check the Job Browser in Hue to see your job running.
