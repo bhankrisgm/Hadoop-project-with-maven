@@ -29,7 +29,7 @@ Note: docker requires that you run it as sudoer (~$ sudo docker) unless you conf
  
 ## Getting to know hadoop tools
 
-1. Use “Hue” UI tool: open browser and enter the url: [http://<IPAddress>:8888](). (in linux you can use localhost, as in the “docker run” command you forwarded the port 8888 to localhost) log in using: cloudera/cloudera.
+1. Use “Hue” UI tool: open browser and enter the url: [http://IPAddress:8888](). (in linux you can use localhost, as in the “docker run” command you forwarded the port 8888 to localhost) log in using: cloudera/cloudera.
 2. On the top right of the screen you see two important tools: 
   1. **Manage HDFS** will allow you to browse the HDFS file system
   2. **Job Browser** will let you view the status of running Map/Reduce jobs.
