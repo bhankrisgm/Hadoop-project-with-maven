@@ -1,4 +1,6 @@
 # Hadoop-project-with-maven
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbhankrisgm%2FHadoop-project-with-maven.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbhankrisgm%2FHadoop-project-with-maven?ref=badge_shield)
+
 A Java WordCount example with Hadoop maven dependencies set
 This is an exercise that will help you install and run hadoop program written in Java, first in your IDE in local mode, and then in an Hadoop cluster that you will build yourself
 
@@ -142,3 +144,7 @@ As you probably noticed, the program distinguishes between uppercase and lowerca
  yarn jar /tmp/hadoop-tutorial-1.0-SNAPSHOT.jar main.java.org.tikalk.WordCount hdfs://<IPAddress>:8020/user/cloudera/wordcount/input hdfs://<IPAddress>:8020/user/cloudera/wordcount/output
  ```
 5. Check the Job Browser in Hue to see your job running.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fbhankrisgm%2FHadoop-project-with-maven.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fbhankrisgm%2FHadoop-project-with-maven?ref=badge_large)
